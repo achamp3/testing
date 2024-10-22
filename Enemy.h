@@ -1,6 +1,4 @@
-#ifndef ENEMY_H
-#define ENEMY_H
-
+#pragma once
 #include <random>
 
 class Move;
@@ -18,6 +16,5 @@ public:
     void changeHealth(int amount); //Changes the enemy health by amount.
     void doMove(Player *aPlayer); //Picks a random move from the moves array, then does the move. 
     int getEnemyHealth(); //Returns enemy health.
+    friend class Move;
 };
-
-#endif

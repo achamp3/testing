@@ -20,6 +20,7 @@ int main()
         //Print the player's choices for moves.
         //Do the player's move on the enemy.
         aPlayer->doMove(aEnemy);
+        //Print player did "move".
         //Check if the enemy is dead. hp = 0. respawn enemy. Track high score.
         if(aEnemy->getEnemyHealth() == 0)
         {
@@ -31,6 +32,7 @@ int main()
         }
         //Do enemy's move on the player.
         aEnemy->doMove(aPlayer);
+        //Print enemy did "move".
         //Check if the player is dead. hp = 0. end game. print you died.
         if(aPlayer->getPlayerHealth() == 0)
         {

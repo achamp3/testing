@@ -1,6 +1,4 @@
-#ifndef MOVE_H
-#define MOVE_H
-
+#pragma once
 #include <string>
 
 class Player;
@@ -20,7 +18,4 @@ public:
     Move(int delta, bool doesDamage, string name); //Creates move with the value for its change in hp, if it is an attack or heal, and the move name.
     void doMove(class Player *aPlayer, class Enemy *aEnemy, bool isPlayer); //Executes the move. If attack, then decrease enemy hp by delta. If heal, increase player hp by delta.
     string getMoveName(); //Returns the name of the move.
-
 };
-
-#endif

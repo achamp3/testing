@@ -1,10 +1,8 @@
-#ifndef PLAYER_H
-#define PLAYER_H
-
+#pragma once
 #include <iostream>
 #include <vector>
 
-class Move;
+class Move; //Let's the player use Move and Enemy without defining them fully.
 class Enemy;
 
 using namespace std;
@@ -26,6 +24,5 @@ public:
     void doMove(Enemy *aEnemy); //Gets the move and player does move.
     int getCoins(); //Returns player's coins.
     int getPlayerHealth(); //Returns player's health.
+    friend class Move;
 };
-
-#endif
