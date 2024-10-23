@@ -39,7 +39,7 @@ int main()
         if(aPlayer->getPlayerHealth() == 0)
         {
             cout << "You died. Try again next time." << endl;
-            cout << score;
+            cout << "Score: " << score << endl;
             exit(0);
         }
     }
