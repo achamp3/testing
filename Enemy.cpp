@@ -4,7 +4,7 @@
 
 Enemy::Enemy()
 {
-    int health = 100;
+    health = 100;
     getEnemyMoves();
 }
 
@@ -28,7 +28,8 @@ void Enemy::changeHealth(int amount)
 void Enemy::doMove(Player *aPlayer)
 {
     random_device randomDevice;
-    int moveIndex = 1 + (randomDevice() % 3);
+    int moveIndex = randomDevice() % 4;
+    cout << "The enemy used a " << moves[moveIndex].getMoveName() << endl;
     moves[moveIndex].doMove(aPlayer, this, false);
 }
 

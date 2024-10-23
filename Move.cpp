@@ -46,3 +46,9 @@ string Move::getMoveName()
 {
     return moveName;
 }
+
+ostream &operator<<(ostream &os, Move move)
+{
+    os << move.moveName << endl;
+    return os;
+}

@@ -4,8 +4,8 @@
 
 Player::Player()
 {
-    int health = 100;
-    int coins = 0;
+    health = 100;
+    coins = 0;
     makeMoveSet();
 }
 
@@ -26,7 +26,8 @@ void Player::changeHealth(int amount)
 // Player asks user to choose move from move set array, then attacks or heals depending.
 void Player::doMove(Enemy *aEnemy)
 {
-    int moveNumber = getMove();
+    int moveNumber = getMove() - 1;
+    cout << "You used a " << moves[moveNumber].getMoveName() << endl;
     moves[moveNumber].doMove(this, aEnemy, true);
 }
 
@@ -51,12 +52,12 @@ void Player::makeMoveSet()
 int Player::getMove()
 {
     int moveNumber = -1;
-    while (moveNumber < 1 && moveNumber > 4)
+    while (moveNumber < 1 || moveNumber > 4)
     {
         cout << "Pick a move: " << endl;
         for (int i = 0; i < moveSetSize; i++)
         {
-            cout << i + 1 << ". " << moves[i].getMoveName() << endl; // Add operator overloading
+            cout << i + 1 << ". " << moves[i]; // Add operator overloading
         }
         cin >> moveNumber;
     }
