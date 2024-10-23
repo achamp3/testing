@@ -27,6 +27,11 @@ void Player::changeHealth(int amount)
 void Player::doMove(Enemy *aEnemy)
 {
     int moveNumber = getMove() - 1;
+    if(moveNumber == -1)
+    {
+        cout << "Thanks for playing!" << endl;
+        exit(0);
+    }
     cout << "You used a " << moves[moveNumber].getMoveName() << endl;
     moves[moveNumber].doMove(this, aEnemy, true);
 }
@@ -60,6 +65,10 @@ int Player::getMove()
             cout << i + 1 << ". " << moves[i]; // Add operator overloading
         }
         cin >> moveNumber;
+        if(moveNumber == 5)
+        {
+            return 0;
+        }
     }
     return moveNumber;
 }

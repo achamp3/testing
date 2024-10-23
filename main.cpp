@@ -14,7 +14,7 @@ int main()
     //Make enemy
     Enemy *aEnemy = new Enemy();
     //Round 1. FIGHT.
-    cout << "ROUND 1. FIGHT." << endl;
+    cout << "ROUND 1. FIGHT. (Enter 5 to end game)" << endl;
     while(isRunning)
     {
         //Print the player's choices for moves.
