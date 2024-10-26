@@ -1,9 +1,4 @@
-#include <iostream>
-#include "Player.h"
-#include "Enemy.h"
-#include "Move.h" 
-
-using namespace std;
+#include "Headers/main.h"
 
 int main()
 {
