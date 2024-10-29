@@ -5,7 +5,6 @@
 
 Game::Game()
 {
-    
 }
 
 void Game::setup()
@@ -18,28 +17,45 @@ void Game::setup()
 
 void Game::loop()
 {
-    while(isRunning)
+    while (isRunning)
     {
-        aPlayer->doMove(aEnemy); //Print the player's choices for moves. Do the player's move on the enemy.
-        cout << "Enemy's HP: "<< aEnemy->getEnemyHealth() << endl; //Print enemy's HP.
-        
-        if(aEnemy->getEnemyHealth() == 0) //Check if the enemy is dead. hp = 0. respawn enemy. Track high score.
-        {
-            delete aEnemy;
-            aEnemy = new Enemy();
-            cout << "You defeated an enemy." << endl;
-            aPlayer->increaseScore();
-            cout << "Score: " << aPlayer->getPlayerScore() << endl;
-        }
-
-        aEnemy->doMove(aPlayer); //Do enemy's move on the player.
-        cout << "Your HP: "<< aPlayer->getPlayerHealth() << endl; //Print player's HP.
-        
-        if(aPlayer->getPlayerHealth() == 0) //Check if the player is dead (hp = 0), if true, then end game. Print "You died." Print player score.
-        {
-            cout << "You died. Try again next time." << endl;
-            cout << "Score: " << aPlayer->getPlayerScore() << endl;
-            exit(0);
-        }
+        doTurn();
     }
+}
+
+void Game::isEnemyDead()
+{
+    if (aEnemy->getEnemyHealth() == 0)
+    {
+        delete aEnemy;
+        aEnemy = new Enemy();
+        cout << "You defeated an enemy." << endl;
+        aPlayer->increaseScore();
+        cout << "Score: " << aPlayer->getPlayerScore() << endl;
+    }
+}
+
+void Game::isPlayerDead()
+{
+    if (aPlayer->getPlayerHealth() == 0)
+    {
+        cout << "You died. Try again next time." << endl;
+        cout << "Score: " << aPlayer->getPlayerScore() << endl;
+        exit(0);
+    }
+}
+
+void Game::printHealth()
+{
+    cout << "Your HP: " << aPlayer->getPlayerHealth() << endl;
+    cout << "Enemy's HP: " << aEnemy->getEnemyHealth() << endl;
+}
+
+void Game::doTurn()
+{
+    printHealth();           // Print player health, then print enemy health.
+    aPlayer->doMove(aEnemy); // Print the player's choices for moves. Do the player's move on the enemy.
+    isEnemyDead();           // Check if the enemy is dead. hp = 0. respawn enemy. Track high score.
+    aEnemy->doMove(aPlayer); // Do enemy's move on the player.
+    isPlayerDead();          // Check if the player is dead (hp = 0), if true, then end game. Print "You died." Print player score.
 }
