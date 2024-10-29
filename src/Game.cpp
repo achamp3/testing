@@ -5,9 +5,14 @@
 
 Game::Game()
 {
+    
+}
+
+void Game::setup()
+{
     isRunning = true;
-    Player *aPlayer = new Player();
-    Enemy *aEnemy = new Enemy();
+    aPlayer = new Player();
+    aEnemy = new Enemy();
     cout << "ROUND 1. FIGHT. (Enter 5 to end game)" << endl;
 }
 

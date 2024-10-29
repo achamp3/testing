@@ -13,5 +13,6 @@ class Game
 
     public:
     Game();
-    void loop();
+    void setup(); //Sets up the game.
+    void loop(); //Loops through the game.
 };
