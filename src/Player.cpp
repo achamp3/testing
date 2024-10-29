@@ -6,6 +6,7 @@ Player::Player()
 {
     health = 100;
     coins = 0;
+    score = 0;
     makeMoveSet();
 }
 
@@ -21,6 +22,11 @@ void Player::changeHealth(int amount)
     {
         health = 0;
     }
+}
+
+void Player::increaseScore()
+{
+    score++;
 }
 
 // Player asks user to choose move from move set array, then attacks or heals depending.
@@ -44,6 +50,11 @@ int Player::getCoins()
 int Player::getPlayerHealth()
 {
     return health;
+}
+
+int Player::getPlayerScore()
+{
+    return score;
 }
 
 void Player::makeMoveSet()
