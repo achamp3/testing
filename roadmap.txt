@@ -1,0 +1,41 @@
+Things to do:
+-Enemy and player balancing:
+    -Add critical strike chance.
+    -Add damage range for attacks.
+    -Have enemy damage range lower than player range.
+    -Remove double moves.
+-Add player types:
+    Witch:
+        - Spell attack.
+        - Stick hit.
+        - Orb.
+        - Healing Potion.
+    Disciple:
+        - Bible prophecy.
+        - Prayer (damage).
+        - Sword Slash.
+        - Prayer (heal).
+    Gladiator:
+        - Longsword.
+        - Battle axe.
+        - Shield bash.
+        - Health steal.
+    Scholar:
+        - Derive the enemy's health.
+        - Vector arrow.
+        - Debate.
+        - Integrate your health.
+-Add round feature:
+    -Every 5 rounds the merchant asks player if they want to buy moves.
+        -Add a merchant:
+            -Create merchant class.
+            -Create move set with additional four moves based on what player type is.
+            -Player buys moves from merchant with coins, swaps player move with merchant move.
+    -Every 10 rounds a boss spawns instead of an enemy.
+        -Add a boss:
+            -Enemy but better.
+            -Lots of health.
+            -Does DAMAGE.
+            -Low critical chance.
+            -Can't heal.
+            

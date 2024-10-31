@@ -21,6 +21,7 @@ void Game::loop()
     {
         doTurn();
     }
+    exit(0);
 }
 
 void Game::isEnemyDead()
@@ -41,7 +42,7 @@ void Game::isPlayerDead()
     {
         cout << "You died. Try again next time." << endl;
         cout << "Score: " << aPlayer->getPlayerScore() << endl;
-        exit(0);
+        isRunning = false;
     }
 }
 
